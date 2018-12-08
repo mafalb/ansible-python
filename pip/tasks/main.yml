@@ -1,7 +1,8 @@
 # vi: set ft=yaml ts=2:
 ---
 
-- assert:
+- name: assertions
+  assert:
     that:
       - python_version is defined
       - python_package_prefix is defined

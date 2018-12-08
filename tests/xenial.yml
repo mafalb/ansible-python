@@ -10,7 +10,7 @@
       member_of_groups: xenial
 
 - hosts: xenial
-  roles: 
+  roles:
     - role: mafalb.python
       python_version: 3
 
@@ -32,7 +32,7 @@
           - python_version: 2
 
 - hosts: xenial
-  roles: 
+  roles:
     - role: mafalb.python
 
   tasks:

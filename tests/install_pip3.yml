@@ -7,7 +7,7 @@
       volumes: mafalb.ansible_ci/node/docker
       image_name: xenial
       src: Ubuntu-16-python3
-      member_of_groups: 
+      member_of_groups:
         - install_pip3
 
     - role: mafalb.ansible_ci/node/docker
