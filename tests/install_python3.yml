@@ -33,11 +33,11 @@
       python_version: 3
 
   tasks:
-    - debug: msg="{{ '/usr/bin/' ] + python_package_prefix[python_version] }}"
+    - debug: msg="{{ '/usr/bin/' + python_package_prefix[python_version] }}"
 
     - name: stat python3
       stat:
-        path: "{{ '/usr/bin/' ] + python_package_prefix[python_version] }}"
+        path: "{{ '/usr/bin/' + python_package_prefix[python_version] }}"
       register: _python3
 
     - name: python3 does exist
