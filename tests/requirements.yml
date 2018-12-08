@@ -6,3 +6,6 @@
 
 - name: mafalb.docker
   src: https://github.com/mafalb/ansible-docker
+
+- name: mafalb.package_repo
+  src: https://github.com/mafalb/ansible-package_repo
