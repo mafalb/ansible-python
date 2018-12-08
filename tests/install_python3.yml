@@ -9,6 +9,7 @@
       src: ubuntu-16-python3
       member_of_groups:
         - install_python3
+        - python3_hosts
 
     - role: mafalb.ansible_ci/node/docker
       container_name: install_python3_xenial2
