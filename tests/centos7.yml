@@ -1,0 +1,32 @@
+# vim: set ft=yaml ts=2:
+---
+- hosts: cihost
+  roles:
+    - role: mafalb.ansible_ci/node/docker
+      container_name: centos7
+      volumes: mafalb.ansible_ci/node/docker
+      image_name: centos7
+      src: centos-7
+      member_of_groups: centos7
+
+- hosts: centos7
+  roles:
+    - role: mafalb.python
+
+  tasks:
+    - name: assert that the default python is python 2
+      assert:
+        that:
+          - python_version: 2
+
+- hosts: centos7
+  roles: 
+    - role: mafalb.python
+      python_version: 3
+
+  tasks:
+    - name: assert that python_version is 3
+      assert:
+        that:
+          - python_version: 3
+...

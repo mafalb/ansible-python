@@ -1,0 +1,53 @@
+# vim: set ft=yaml ts=2:
+---
+- hosts: cihost
+  roles:
+    - role: mafalb.ansible_ci/node/docker
+      container_name: install_pip3_xenial1
+      volumes: mafalb.ansible_ci/node/docker
+      image_name: xenial
+      src: Ubuntu-16-python3
+      member_of_groups: 
+        - install_pip3
+
+    - role: mafalb.ansible_ci/node/docker
+      container_name: install_pip3_xenial2
+      volumes: mafalb.ansible_ci/node/docker
+      image_name: xenial2
+      src: Ubuntu-16-python2
+      member_of_groups:
+        - install_pip3
+
+    - role: mafalb.ansible_ci/node/docker
+      container_name: centos7
+      volumes: mafalb.ansible_ci/node/docker
+      image_name: centos7
+      src: centos-7
+      member_of_groups:
+        - install_pip3
+
+- hosts: install_pip3
+  roles: 
+    - role: mafalb.python/pip
+      python_version: 3
+
+  tasks:
+    - name: stat pip3
+      stat:
+        path: /usr/bin/pip3
+      register: _pip3
+
+    - name: pip3 does exist
+      assert:
+        that:
+          - _pip3.stat.exists
+
+    - name: stat pip
+      stat:
+        path: /usr/bin/pip
+      register: _pip
+
+    - name: pip does not exist
+      assert:
+        that:
+          - not _pip.stat.exists

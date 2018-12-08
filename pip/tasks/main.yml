@@ -1,0 +1,23 @@
+# vi: set ft=yaml ts=2:
+---
+
+- assert:
+    that:
+      - python_version is defined
+      - python_package_prefix is defined
+
+- debug: var=python_version
+  tags:
+    - never
+    - debug
+
+- debug: var=python_package_prefix
+  tags:
+    - never
+    - debug
+
+- name: pip is installed
+  package:
+    name: "{{ python_package_prefix[python_version] + '-' + 'pip' }}"
+    state: present
+...

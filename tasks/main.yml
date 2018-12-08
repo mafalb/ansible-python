@@ -1,0 +1,7 @@
+# vi: set ft=yaml ts=2:
+---
+
+- name: set OS specific variables
+  include_vars:
+    file: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+...
