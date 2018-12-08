@@ -17,7 +17,7 @@
     - name: assert that the default python is python 2
       assert:
         that:
-          - python_version: 2
+          - python_version == 2
 
 - hosts: centos7
   roles:
