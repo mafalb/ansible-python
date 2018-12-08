@@ -10,9 +10,10 @@
       member_of_groups: xenial
 
 - hosts: xenial
+  vars:
+    python_version: 3
   roles:
     - role: mafalb.python
-      python_version: 3
 
   tasks:
     - name: assert that python_version is 3
@@ -21,9 +22,10 @@
           - python_version == 3
 
 - hosts: xenial
+  vars:
+    python_version: 2
   roles:
     - role: mafalb.python
-      python_version: 2
 
   tasks:
     - name: assert that the python_version is 2

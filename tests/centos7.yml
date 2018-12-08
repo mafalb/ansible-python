@@ -20,11 +20,15 @@
           - python_version == 2
 
 - hosts: centos7
-  roles:
-    - role: mafalb.python
+  vars:
       python_version: 3
 
+  roles:
+    - role: mafalb.python
+
   tasks:
+    - debug: var=python_version
+
     - name: assert that python_version is 3
       assert:
         that:
