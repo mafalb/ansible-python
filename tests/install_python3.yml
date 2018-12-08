@@ -35,7 +35,7 @@
   tasks:
     - name: stat python3
       stat:
-        path: /usr/bin/python2
+        path: /usr/bin/python3
       register: _python3
 
     - name: python3 does exist
