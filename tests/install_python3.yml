@@ -36,7 +36,7 @@
     - name: stat python3
       stat:
         path: /usr/bin/python2
-      register: _python2
+      register: _python3
 
     - name: python3 does exist
       assert:
