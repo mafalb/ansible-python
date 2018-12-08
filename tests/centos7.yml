@@ -28,5 +28,5 @@
     - name: assert that python_version is 3
       assert:
         that:
-          - python_version: 3
+          - python_version == 3
 ...
