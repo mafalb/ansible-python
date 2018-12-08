@@ -6,7 +6,7 @@
       container_name: install_python3_xenial1
       volumes: mafalb.ansible_ci/node/docker
       image_name: xenial
-      src: Ubuntu-16-python3
+      src: ubuntu-16-python3
       member_of_groups:
         - install_python3
 
@@ -14,7 +14,7 @@
       container_name: install_python3_xenial2
       volumes: mafalb.ansible_ci/node/docker
       image_name: xenial2
-      src: Ubuntu-16-python2
+      src: ubuntu-16-python2
       member_of_groups:
         - install_python3
 

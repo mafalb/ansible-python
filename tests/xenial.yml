@@ -6,7 +6,7 @@
       container_name: xenial
       volumes: mafalb.ansible_ci/node/docker
       image_name: xenial
-      src: Ubuntu-16-python3
+      src: ubuntu-16-python3
       member_of_groups: xenial
 
 - hosts: xenial
