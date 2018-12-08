@@ -42,5 +42,8 @@ galaxy_info:
 
   galaxy_tags: []
 
-dependencies: []
+dependencies:
+  - role: mafalb.package_repo
+    package_repo_name: epel
+    when: ansible_distribution == 'CentOS'
 ...

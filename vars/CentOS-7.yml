@@ -4,5 +4,5 @@
 python_default_version: 2
 python_package_prefix:
   2: python
-
+  3: python36
 ...

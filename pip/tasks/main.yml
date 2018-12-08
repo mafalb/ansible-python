@@ -21,4 +21,11 @@
   package:
     name: "{{ python_package_prefix[python_version] + '-' + 'pip' }}"
     state: present
+
+- name: upgrade pip
+  when: python_pip_upgrade
+  pip:
+    name: pip
+    executable: pip{{ python_version }}
+    extra_args: --upgrade
 ...

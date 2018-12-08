@@ -27,7 +27,7 @@
       member_of_groups:
         - install_python3
 
-- hosts: install_python2
+- hosts: install_python3
   roles:
     - role: mafalb.python/python
       python_version: 3
