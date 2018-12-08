@@ -21,9 +21,9 @@
   when:
     - python_version == 3    
     - ansible_distribution == 'CentOS'
-    - ansible_os_major_version == '7'
+    - ansible_distribution_major_version == '7'
   include_tasks:
-    file: "{{ ansible_distribution }}-{{ ansible_os_major_version }}.yml"
+    file: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
 
 - name: python is installed
   package:
