@@ -27,7 +27,7 @@
         - install_python2
 
 - hosts: install_python2
-  roles: 
+  roles:
     - role: mafalb.python/python
       python_version: 2
 
