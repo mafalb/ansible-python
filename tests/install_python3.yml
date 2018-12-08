@@ -20,7 +20,7 @@
         - install_python3
 
     - role: mafalb.ansible_ci/node/docker
-      container_name: centos7
+      container_name: install_python3_centos7
       volumes: mafalb.ansible_ci/node/docker
       image_name: centos7
       src: centos-7
@@ -33,9 +33,11 @@
       python_version: 3
 
   tasks:
+    - debug: msg="{{ '/usr/bin/' ] + python_package_prefix[python_version] }}"
+
     - name: stat python3
       stat:
-        path: "{{ python_binary|default('/usr/bin/python3') }}"
+        path: "{{ '/usr/bin/' ] + python_package_prefix[python_version] }}"
       register: _python3
 
     - name: python3 does exist
