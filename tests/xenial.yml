@@ -7,9 +7,9 @@
       volumes: mafalb.ansible_ci/node/docker
       image_name: xenial
       src: ubuntu-16-python3
-      member_of_groups: xenial
+      member_of_groups: testnodes_xenial
 
-- hosts: xenial
+- hosts: testnodes_xenial
   vars:
     python_version: 3
   roles:
@@ -21,7 +21,7 @@
         that:
           - python_version == 3
 
-- hosts: xenial
+- hosts: testnodes_xenial
   vars:
     python_version: 2
   roles:
@@ -33,7 +33,7 @@
         that:
           - python_version == 2
 
-- hosts: xenial
+- hosts: testnodes_xenial
   roles:
     - role: mafalb.python
 

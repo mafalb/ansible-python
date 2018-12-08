@@ -3,13 +3,13 @@
 - hosts: cihost
   roles:
     - role: mafalb.ansible_ci/node/docker
-      container_name: centos-7
+      container_name: centos7
       volumes: mafalb.ansible_ci/node/docker
       image_name: centos7
       src: centos-7
-      member_of_groups: centos7
+      member_of_groups: testnodes_centos7
 
-- hosts: centos7
+- hosts: testnodes_centos7
   roles:
     - role: mafalb.python
 
@@ -19,7 +19,7 @@
         that:
           - python_version == 2
 
-- hosts: centos7
+- hosts: testnodes_centos7
   vars:
       python_version: 3
 
