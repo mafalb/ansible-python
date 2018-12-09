@@ -17,14 +17,6 @@
     - never
     - debug
 
-- name: include OS specific tasks
-  when:
-    - python_version == 3    
-    - ansible_distribution == 'CentOS'
-    - ansible_distribution_major_version == '7'
-  include_tasks:
-    file: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-
 - name: python is installed
   package:
     name: "{{ python_package_prefix[python_version] }}"

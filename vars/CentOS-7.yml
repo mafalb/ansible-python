@@ -4,5 +4,7 @@
 python_default_version: 2
 python_package_prefix:
   2: python
-  3: rh-python36-python
+
+  # This works for the python36 in EPEL
+  3: python36
 ...
