@@ -33,15 +33,17 @@
       python_version: 3
 
   tasks:
-    - name: stat pip3
-      stat:
-        path: /usr/bin/pip3
+    - name: get pip version
+      command: "{{ python_package_prefix[python_version] -m pip --version
       register: _pip3
 
-    - name: pip3 does exist
+    - name: debug _pip3
+      debug: var=_pip3
+
+    - name: assert
       assert:
         that:
-          - _pip3.stat.exists
+          - _pip3.stdout.startswith('pip')
 
     - name: stat pip
       stat:
