@@ -1,7 +1,0 @@
-# vi: set ft=yaml ts=2:
----
-- name: scl is present
-  package:
-    name: centos-release-scl-rh
-    state: present
-...
