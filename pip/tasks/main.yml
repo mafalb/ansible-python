@@ -29,6 +29,8 @@
     - ansible_os_family == 'RedHat' and python_version == 3
   include_role:
     name: python
+    vars:
+      python_version: 3
 
 - name: upgrade pip
   when: python_pip_upgrade

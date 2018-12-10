@@ -20,7 +20,7 @@
         - install_pip3
 
     - role: mafalb.ansible_ci/node/docker
-      container_name: centos7
+      container_name: install_pip3_centos7
       volumes: mafalb.ansible_ci/node/docker
       image_name: centos7
       src: centos-7
