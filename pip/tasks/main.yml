@@ -24,6 +24,12 @@
     name: "{{ python_package_prefix[python_version] + '-' + 'pip' }}"
     state: present
 
+- name: python is installed
+  when:
+    - ansible_os_family == 'RedHat' and python_version == 3
+  include_role:
+    name: python
+
 - name: upgrade pip
   when: python_pip_upgrade
   pip:
