@@ -28,9 +28,10 @@
         - install_pip3
 
 - hosts: install_pip3
+  vars:
+    python_version: 3
   roles:
     - role: mafalb.python/pip
-      python_version: 3
 
   tasks:
     - name: get pip version
