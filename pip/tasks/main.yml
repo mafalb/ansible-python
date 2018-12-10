@@ -19,7 +19,7 @@
 
 - name: pip is installed
   when:
-    - ansible_os_family != 'RedHat' or python_version == 3
+    - ansible_os_family != 'RedHat' or python_version == 2
   package:
     name: "{{ python_package_prefix[python_version] + '-' + 'pip' }}"
     state: present
