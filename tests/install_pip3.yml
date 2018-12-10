@@ -34,7 +34,7 @@
 
   tasks:
     - name: get pip version
-      command: "{{ python_package_prefix[python_version] -m pip --version
+      command: "{{ python_package_prefix[python_version] -m pip --version"
       register: _pip3
 
     - name: debug _pip3
