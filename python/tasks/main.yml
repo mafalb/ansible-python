@@ -12,7 +12,7 @@
     - never
     - debug
 
-- debug: var=python_package_prefix
+- debug: var=python_package_prefix[python_version]
   tags:
     - never
     - debug
