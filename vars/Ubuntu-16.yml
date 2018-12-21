@@ -1,7 +1,5 @@
 # vim: set ft=yaml ts=2:
 ---
-
-python_package_prefix:
-  2: python
-
+python2_package_prefix: python
+python2_pip_package: python2-pip
 ...

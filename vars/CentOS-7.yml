@@ -1,10 +1,5 @@
 # vim: set ft=yaml ts=2:
 ---
-
-python_default_version: 2
-python_package_prefix:
-  2: python
-
-  # This works for the python36 in EPEL
-  3: python36
+python2_package_prefix: python
+python2_pip_package: python-pip
 ...

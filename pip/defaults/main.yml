@@ -1,4 +1,0 @@
-# vim: set ft=yaml ts=2:
----
-python_pip_package: "{{ mafalb_python[python_major_version|default(python_default_version)].package_prefix + '-pip' }}"
-...

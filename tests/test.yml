@@ -3,7 +3,5 @@
 - import_playbook: centos7.yml
 - import_playbook: xenial.yml
 - import_playbook: install_python2.yml
-- import_playbook: install_python3.yml
 - import_playbook: install_pip2.yml
-- import_playbook: install_pip3.yml
 ...

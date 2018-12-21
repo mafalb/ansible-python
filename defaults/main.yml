@@ -1,5 +1,4 @@
 # vim: set ft=yaml ts=2:
 ---
-python_version: "{{ python_default_version }}"
-python_pip_upgrade: false
+python2_pip_upgrade: false
 ...

@@ -4,21 +4,15 @@
 - name: assertions
   assert:
     that:
-      - python_version is defined
-      - python_package_prefix is defined
+      - python2_package_prefix is defined
 
-- debug: var=python_version
-  tags:
-    - never
-    - debug
-
-- debug: var=python_package_prefix[python_version]
+- debug: var=python2_package_prefix
   tags:
     - never
     - debug
 
 - name: python is installed
   package:
-    name: "{{ python_package_prefix[python_version] }}"
+    name: "{{ python2_package_prefix }}"
     state: present
 ...

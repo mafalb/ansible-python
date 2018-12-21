@@ -2,4 +2,7 @@
 ---
 
 dependencies:
-  - role: mafalb.python
+  - role: mafalb.python2
+  - role: mafalb.package_repo
+    package_repo_name: epel
+    when: ansible_distribution == 'CentOS'

@@ -4,38 +4,22 @@
 - name: assertions
   assert:
     that:
-      - python_version is defined
-      - python_package_prefix is defined
+      - python2_package_prefix is defined
 
-- debug: var=python_version
-  tags:
-    - never
-    - debug
-
-- debug: var=python_package_prefix
+- debug: var=python2_package_prefix
   tags:
     - never
     - debug
 
 - name: pip is installed
-  when:
-    - ansible_os_family != 'RedHat' or python_version == 2
   package:
-    name: "{{ python_package_prefix[python_version] + '-' + 'pip' }}"
+    name: "{{ python2_package_prefix + '-' + 'pip' }}"
     state: present
 
-- name: python is installed
-  when:
-    - ansible_os_family == 'RedHat' and python_version == 3
-  include_role:
-    name: python
-  vars:
-    python_version: 3
-
 - name: upgrade pip
-  when: python_pip_upgrade
+  when: python2_pip_upgrade
   pip:
     name: pip
-    executable: pip{{ python_version }}
+    executable: pip2
     extra_args: --upgrade
 ...
