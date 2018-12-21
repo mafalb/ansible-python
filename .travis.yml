@@ -5,7 +5,7 @@ dist: xenial
 language: minimal
 env:
   global:
-    - ANSIBLE_ROLE_NAME=mafalb.python
+    - ANSIBLE_ROLE_NAME=mafalb.python2
     - CI=travis
     - ANSIBLE_FORCE_COLOR=1
   matrix:
