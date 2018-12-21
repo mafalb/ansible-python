@@ -12,25 +12,4 @@
 - hosts: testnodes_centos7
   roles:
     - role: mafalb.python2
-
-  tasks:
-    - name: assert that the default python is python 2
-      assert:
-        that:
-          - python_version == 2
-
-- hosts: testnodes_centos7
-  vars:
-      python_version: 3
-
-  roles:
-    - role: mafalb.python2
-
-  tasks:
-    - debug: var=python_version
-
-    - name: assert that python_version is 3
-      assert:
-        that:
-          - python_version == 3
 ...

@@ -11,40 +11,10 @@
         - testnodes_xenial
         - python3_hosts
 
-- name: xenial with python3
-  hosts: testnodes_xenial
-  vars:
-    python_version: 3
-  roles:
-    - role: mafalb.python2
-
-  tasks:
-    - name: assert that python_version is 3
-      assert:
-        that:
-          - python_version == 3
-
 - name: xenial with python2
   hosts: testnodes_xenial
   vars:
     python_version: 2
   roles:
     - role: mafalb.python2
-
-  tasks:
-    - name: assert that the python_version is 2
-      assert:
-        that:
-          - python_version == 2
-
-- name: xenial with python3 again
-  hosts: testnodes_xenial
-  roles:
-    - role: mafalb.python2
-
-  tasks:
-    - name: assert that python_version is 3
-      assert:
-        that:
-          - python_version == 3
 ...
