@@ -31,7 +31,7 @@
   vars:
     python_version: 3
   roles:
-    - role: mafalb.python/pip
+    - role: mafalb.python2/pip
 
   tasks:
     - name: get pip version

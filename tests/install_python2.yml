@@ -29,7 +29,7 @@
 
 - hosts: install_python2
   roles:
-    - role: mafalb.python/python
+    - role: mafalb.python2/python
       python_version: 2
 
   tasks:

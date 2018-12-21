@@ -29,7 +29,7 @@
 
 - hosts: install_pip2
   roles:
-    - role: mafalb.python/pip
+    - role: mafalb.python2/pip
       python_version: 2
 
   tasks:
