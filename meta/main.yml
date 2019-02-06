@@ -38,12 +38,17 @@ galaxy_info:
   # To view available platforms and versions (or releases), visit:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
-  platforms: []
+  platforms:
+  - name: Ubuntu
+    versions:
+      - xenial
+  - name: EL
+    versions:
+      - 7
 
   galaxy_tags: []
 
 dependencies:
-  - role: mafalb.package_repo
-    package_repo_name: epel
+  - role: mafalb.package_repo/epel
     when: ansible_distribution == 'CentOS'
 ...
